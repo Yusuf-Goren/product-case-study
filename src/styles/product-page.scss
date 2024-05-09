@@ -1,0 +1,266 @@
+$price-color: #0288d1;
+
+.products-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.products-section {
+  max-width: 1500px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99999999;
+}
+
+.filter-title {
+  margin-bottom: 0.5em;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 18%;
+}
+
+.filter-from-group {
+  max-height: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow-y: auto;
+  margin-top: 0.5em;
+}
+
+.product-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5em 1em;
+  margin: 1.5em 0;
+}
+
+.product-list-section {
+  width: 60%;
+}
+
+.product-cart {
+  font-weight: 500;
+  padding: 0.4em 0.5em 0.5em 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  transition: 0.3s ease;
+  background-color: rgb(196, 196, 196);
+}
+.product-cart img {
+  cursor: pointer;
+}
+
+.product-cart:hover {
+  scale: 1.1;
+  background-color: rgb(216, 216, 216);
+}
+
+.product-name {
+  flex-wrap: wrap;
+  min-height: 40px;
+}
+
+.product-price {
+  color: $price-color;
+  margin-bottom: 1em;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 22%;
+  margin: 1.7em 0;
+}
+
+.card-item-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-weight: 500;
+  gap: 0.5em;
+  height: 100%;
+  align-items: center;
+}
+
+.card-item-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card-item-buttons div {
+  text-align: center;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: rgb(90, 90, 255);
+  color: white;
+  padding: 0 0.5em;
+}
+
+.card-item-buttons button {
+  padding: 0.5em;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 6px 0;
+}
+
+.quantity div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  text-align: center;
+  width: 32px;
+  aspect-ratio: 1/1;
+  font-size: 16px;
+  background-color: $price-color;
+  font-weight: 500;
+  color: white;
+}
+
+.quantity button {
+  aspect-ratio: 1/1;
+  border: none;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-weight: 500;
+}
+.checkout span {
+  font-size: large;
+  color: $price-color;
+}
+
+.navbar-texts {
+  font-size: medium;
+  margin-left: 0.5em;
+}
+
+.single-product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-product {
+  width: 78%;
+  margin-top: 1.7em;
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  font-size: x-large;
+}
+
+.d-flex-row img {
+  width: 50%;
+  object-fit: contain;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.product-desc {
+  margin-top: 0.5em;
+  font-size: medium;
+}
+
+.no-data-text {
+  font-size: 25px;
+  color: red;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-weight: 500;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.no-data-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-data-wrapper img {
+  object-fit: cover;
+}
+
+@media screen and (max-width: 992px) {
+  .products-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cart-container {
+    align-items: center;
+    width: 78%;
+  }
+  .d-flex-row {
+    flex-direction: column;
+  }
+  .filter-section {
+    width: 90%;
+
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .filter-section > div {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .filter-section {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .filter-section > div {
+    width: 80%;
+  }
+}
