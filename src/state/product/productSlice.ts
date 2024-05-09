@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { FilterType, ProductType, SingleProductType, initialStateSingleProductType, } from "../../types";
 import axios from "axios";
+import { productPerPage } from "../../utils/consts";
 
 
 interface ProductState {
@@ -50,7 +51,7 @@ const productSlice = createSlice({
             if (action.payload > 0 && action.payload <= state.maxPageSize) {
                 state.page = action.payload
                 let tempProductList = state.productListAll
-                let newProductList = tempProductList.slice((state.page - 1) * 12, action.payload * 12)
+                let newProductList = tempProductList.slice((state.page - 1) * productPerPage, action.payload * productPerPage)
                 state.productList = newProductList
             }
         },
@@ -113,8 +114,8 @@ const productSlice = createSlice({
                 tempProductList = tempProductList.filter((product: ProductType) => product.brand === state.searchBrand)
             }
 
-            state.maxPageSize = Math.ceil(tempProductList.length / 12)
-            let newProductList = tempProductList.slice((state.page - 1) * 12, state.page * 12)
+            state.maxPageSize = Math.ceil(tempProductList.length / productPerPage)
+            let newProductList = tempProductList.slice((state.page - 1) * productPerPage, state.page * productPerPage)
             state.product = initialStateSingleProductType
             state.page = 1
             state.productList = newProductList
